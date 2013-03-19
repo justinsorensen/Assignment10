@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+<!-- input--><div id="eventDiv">
+<p><form id="newEvent" name="newEvent" method="post">
+<input id="name" type='text' maxlength="17" placeholder='name,' name="name" />
+<input id="score" type='text' maxlength="17" placeholder='score,' name="score" />
+  - <input id="addEvent" type="submit" value="Click!" >
+</form></p>
+<!-- /input --></div>  
+   
+<script type="text/javascript">
+  
+  var obj =  { "name" : $("#name").val(), "score" : $("#score").val() };
+ 
+      $.ajax( { url: "https://api.mongolab.com/api/1/databases/tetris/collections/scores?apiKey=TeBAn-RHiYrUjizTkoe0SZ4FqOtxrxUQ",
+            data: JSON.stringify(obj),
+            type: "POST",
+            contentType: "application/json" } );
+  
+</script>
+
+</html>
